@@ -15,11 +15,6 @@ import org.kde.kirigami 2.20 as Kirigami
 
 import org.kde.breeze.components
 
-// TODO: Once SDDM 0.19 is released and we are setting the font size using the
-// SDDM KCM's syncing feature, remove the `config.fontSize` overrides here and
-// the fontSize properties in various components, because the theme's default
-// font size will be correctly propagated to the login screen
-
 Item {
     id: root
 
@@ -209,30 +204,26 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/suspend_primary.svgz"
+                        icon.name: "system-suspend"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/restart_primary.svgz"
+                        icon.name: "system-reboot"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/shutdown_primary.svgz"
+                        icon.name: "system-shutdown"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/switch_primary.svgz"
+                        icon.name: "system-user-prompt"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "For switching to a username and password prompt", "Other…")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: mainStack.push(userPromptComponent)
                         enabled: true
                         visible: !userListComponent.showUsernamePrompt
@@ -353,30 +344,26 @@ Item {
                 actionItemsVisible: !inputPanel.keyboardActive
                 actionItems: [
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/suspend_primary.svgz"
+                        icon.name: "system-suspend"
                         text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Suspend to RAM", "Sleep")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.suspend()
                         enabled: sddm.canSuspend
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/restart_primary.svgz"
+                        icon.name: "system-reboot"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Restart")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.reboot()
                         enabled: sddm.canReboot
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/shutdown_primary.svgz"
+                        icon.name: "system-shutdown"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "Shut Down")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: sddm.powerOff()
                         enabled: sddm.canPowerOff
                     },
                     ActionButton {
-                        iconSource: "/usr/share/sddm/themes/MacVentura/assets/switch_primary.svgz"
+                        icon.name: "system-user-list"
                         text: i18nd("plasma_lookandfeel_org.kde.lookandfeel", "List Users")
-                        fontSize: parseInt(config.fontSize) + 1
                         onClicked: mainStack.pop()
                     }
                 ]
